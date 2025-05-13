@@ -24,16 +24,16 @@ const DonationOption = ({
   <div 
     className={`border rounded-lg p-5 cursor-pointer transition-colors ${
       selected 
-        ? "border-church-accent bg-church-accent bg-opacity-5" 
-        : "border-gray-200 hover:border-church-accent"
+        ? "border-primary bg-primary bg-opacity-5" 
+        : "border-border hover:border-primary"
     }`}
     onClick={onSelect}
   >
     <div className="flex items-center justify-between mb-2">
       <h3 className="font-medium text-lg">{title}</h3>
-      <span className="text-lg font-semibold text-church-primary">${amount}</span>
+      <span className="text-lg font-semibold text-primary">${amount}</span>
     </div>
-    <p className="text-gray-600 text-sm">{description}</p>
+    <p className="text-muted-foreground text-sm">{description}</p>
   </div>
 );
 
@@ -86,13 +86,13 @@ const Donate = () => {
       />
 
       {/* Donation Form Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
               {/* Left Column - Form */}
               <div className="lg:col-span-2">
-                <h2 className="text-3xl font-serif font-semibold text-church-primary mb-6">Make a Donation</h2>
+                <h2 className="text-3xl font-serif font-semibold text-primary mb-6">Make a Donation</h2>
                 
                 <form onSubmit={handleDonationSubmit} className="space-y-6">
                   {/* Donation Purpose Selection */}
@@ -109,17 +109,17 @@ const Donate = () => {
                         <TabsTrigger value="building">Building Fund</TabsTrigger>
                       </TabsList>
                       <TabsContent value="tithes">
-                        <p className="text-sm text-church-gray mt-2">
+                        <p className="text-sm text-muted-foreground mt-2">
                           Tithes support the ongoing ministry and operations of our church.
                         </p>
                       </TabsContent>
                       <TabsContent value="offerings">
-                        <p className="text-sm text-church-gray mt-2">
+                        <p className="text-sm text-muted-foreground mt-2">
                           Offerings go towards special projects and community outreach.
                         </p>
                       </TabsContent>
                       <TabsContent value="building">
-                        <p className="text-sm text-church-gray mt-2">
+                        <p className="text-sm text-muted-foreground mt-2">
                           The Building Fund supports maintenance and improvements to our facilities.
                         </p>
                       </TabsContent>
@@ -135,7 +135,7 @@ const Donate = () => {
                           key={value}
                           type="button"
                           variant={amount === value ? "default" : "outline"}
-                          className={amount === value ? "bg-church-accent hover:bg-church-accent/90" : ""}
+                          className={amount === value ? "bg-primary hover:bg-primary/90" : ""}
                           onClick={() => handleAmountClick(value)}
                         >
                           ${value}
@@ -144,7 +144,7 @@ const Donate = () => {
                       <Button
                         type="button"
                         variant={amount === "custom" ? "default" : "outline"}
-                        className={amount === "custom" ? "bg-church-accent hover:bg-church-accent/90" : ""}
+                        className={amount === "custom" ? "bg-primary hover:bg-primary/90" : ""}
                         onClick={() => setAmount("custom")}
                       >
                         Custom
@@ -176,7 +176,7 @@ const Donate = () => {
                       id="recurring"
                       checked={recurringDonation}
                       onChange={() => setRecurringDonation(!recurringDonation)}
-                      className="h-4 w-4 rounded border-gray-300 text-church-accent focus:ring-church-accent"
+                      className="h-4 w-4 rounded border-border text-primary focus:ring-primary"
                     />
                     <Label htmlFor="recurring">Make this a monthly recurring donation</Label>
                   </div>
@@ -191,9 +191,9 @@ const Donate = () => {
                           Credit/Debit Card
                         </Label>
                         <div className="flex gap-1">
-                          <div className="h-6 w-10 bg-blue-600 rounded"></div>
-                          <div className="h-6 w-10 bg-red-500 rounded"></div>
-                          <div className="h-6 w-10 bg-yellow-500 rounded"></div>
+                          <div className="h-6 w-10 bg-muted rounded"></div>
+                          <div className="h-6 w-10 bg-muted rounded"></div>
+                          <div className="h-6 w-10 bg-muted rounded"></div>
                         </div>
                       </div>
                       <div className="flex items-center space-x-3 border rounded-md p-3">
@@ -201,7 +201,7 @@ const Donate = () => {
                         <Label htmlFor="mobile" className="flex-grow cursor-pointer">
                           Mobile Money
                         </Label>
-                        <div className="h-6 w-10 bg-green-600 rounded"></div>
+                        <div className="h-6 w-10 bg-muted rounded"></div>
                       </div>
                       <div className="flex items-center space-x-3 border rounded-md p-3">
                         <RadioGroupItem value="bank" id="bank" />
@@ -215,7 +215,7 @@ const Donate = () => {
                   {/* Submit Button */}
                   <Button 
                     type="submit" 
-                    className="w-full bg-church-accent hover:bg-church-accent/90 text-white py-3 text-lg"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground py-3 text-lg"
                   >
                     Complete Donation
                   </Button>
@@ -224,32 +224,32 @@ const Donate = () => {
 
               {/* Right Column - Information */}
               <div className="lg:col-span-1 space-y-6">
-                <div className="bg-gray-50 p-6 rounded-lg">
+                <div className="bg-secondary p-6 rounded-lg">
                   <h3 className="font-serif text-xl font-semibold mb-4">Why Give?</h3>
-                  <p className="text-church-gray mb-4">
+                  <p className="text-muted-foreground mb-4">
                     Your donations help support our church's ministries, community outreach programs, building maintenance, and spreading God's word.
                   </p>
                   <ul className="space-y-2">
                     <li className="flex items-center">
-                      <svg className="h-5 w-5 text-church-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="h-5 w-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       <span>Support church operations</span>
                     </li>
                     <li className="flex items-center">
-                      <svg className="h-5 w-5 text-church-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="h-5 w-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       <span>Fund community outreach</span>
                     </li>
                     <li className="flex items-center">
-                      <svg className="h-5 w-5 text-church-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="h-5 w-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       <span>Support mission work</span>
                     </li>
                     <li className="flex items-center">
-                      <svg className="h-5 w-5 text-church-accent mr-2" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="h-5 w-5 text-primary mr-2" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       <span>Assist those in need</span>
@@ -257,7 +257,7 @@ const Donate = () => {
                   </ul>
                 </div>
 
-                <div className="bg-church-primary text-white p-6 rounded-lg">
+                <div className="bg-primary text-primary-foreground p-6 rounded-lg">
                   <h3 className="font-serif text-xl font-semibold mb-4">Other Ways to Give</h3>
                   <ul className="space-y-4">
                     <li className="flex items-start">
@@ -296,29 +296,29 @@ const Donate = () => {
       </section>
 
       {/* Donation Impact Section */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl font-serif font-semibold text-church-primary mb-6">Your Donation Makes a Difference</h2>
-            <p className="text-gray-700">
+            <h2 className="text-3xl font-serif font-semibold text-primary mb-6">Your Donation Makes a Difference</h2>
+            <p className="text-muted-foreground">
               Your generous contributions help fund our ministries and make a positive impact in our community.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="text-church-accent text-4xl font-bold mb-4">30+</div>
+            <div className="bg-background p-6 rounded-lg shadow-md text-center border">
+              <div className="text-primary text-4xl font-bold mb-4">30+</div>
               <h3 className="text-xl font-semibold mb-2">Community Outreach Events</h3>
-              <p className="text-gray-600">Annually serving our local community through various programs.</p>
+              <p className="text-muted-foreground">Annually serving our local community through various programs.</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="text-church-accent text-4xl font-bold mb-4">100+</div>
+            <div className="bg-background p-6 rounded-lg shadow-md text-center border">
+              <div className="text-primary text-4xl font-bold mb-4">100+</div>
               <h3 className="text-xl font-semibold mb-2">Students Supported</h3>
-              <p className="text-gray-600">Through our scholarship and mentoring programs each year.</p>
+              <p className="text-muted-foreground">Through our scholarship and mentoring programs each year.</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <div className="text-church-accent text-4xl font-bold mb-4">5</div>
+            <div className="bg-background p-6 rounded-lg shadow-md text-center border">
+              <div className="text-primary text-4xl font-bold mb-4">5</div>
               <h3 className="text-xl font-semibold mb-2">Local Missions</h3>
-              <p className="text-gray-600">Funded projects supporting evangelism and community development.</p>
+              <p className="text-muted-foreground">Funded projects supporting evangelism and community development.</p>
             </div>
           </div>
         </div>

@@ -22,12 +22,12 @@ const Hero = ({
   return (
     <div 
       className={cn(
-        "relative w-full flex items-center justify-center bg-church-primary bg-opacity-60 bg-cover bg-center",
+        "relative w-full flex items-center justify-center bg-primary bg-opacity-10 bg-cover bg-center border-b border-border",
         small ? "py-16 md:py-24" : "py-24 md:py-48"
       )}
       style={
         backgroundImage
-          ? { backgroundImage: `linear-gradient(rgba(26, 46, 76, 0.7), rgba(26, 46, 76, 0.7)), url(${backgroundImage})` }
+          ? { backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${backgroundImage})` }
           : {}
       }
     >

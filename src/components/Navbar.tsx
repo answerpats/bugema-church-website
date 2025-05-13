@@ -26,21 +26,21 @@ const Navbar = () => {
     cn(
       "px-4 py-2 font-medium transition-colors relative",
       isActive
-        ? "text-church-accent after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-church-accent"
-        : "hover:text-church-accent"
+        ? "text-primary after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-primary"
+        : "hover:text-primary"
     );
 
   return (
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
+        isScrolled ? "bg-background shadow-md py-2" : "bg-transparent py-4"
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
         <NavLink to="/" className="flex items-center gap-3">
-          <span className="text-2xl font-serif font-bold text-church-primary">
-            Bugema <span className="text-church-accent">Church</span>
+          <span className="text-2xl font-serif font-bold text-primary">
+            Bugema <span className="font-bold">Church</span>
           </span>
         </NavLink>
 
@@ -51,7 +51,7 @@ const Navbar = () => {
           <NavLink to="/events" className={navLinkClass}>Events</NavLink>
           <NavLink to="/ministries" className={navLinkClass}>Ministries</NavLink>
           <NavLink to="/about" className={navLinkClass}>About</NavLink>
-          <NavLink to="/donate" className="ml-4 bg-church-accent text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition">
+          <NavLink to="/donate" className="ml-4 bg-primary text-primary-foreground px-6 py-2 rounded-md hover:bg-primary/90 transition">
             Donate
           </NavLink>
         </nav>
@@ -59,7 +59,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden text-church-primary"
+          className="md:hidden text-primary"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -89,45 +89,45 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <nav className="md:hidden bg-white p-4 shadow-lg animate-fade-in">
+        <nav className="md:hidden bg-background p-4 shadow-lg animate-fade-in">
           <NavLink
             to="/"
-            className="block py-2 text-church-primary hover:text-church-accent"
+            className="block py-2 text-primary hover:text-primary/80"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Home
           </NavLink>
           <NavLink
             to="/sermons"
-            className="block py-2 text-church-primary hover:text-church-accent"
+            className="block py-2 text-primary hover:text-primary/80"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Sermons
           </NavLink>
           <NavLink
             to="/events"
-            className="block py-2 text-church-primary hover:text-church-accent"
+            className="block py-2 text-primary hover:text-primary/80"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Events
           </NavLink>
           <NavLink
             to="/ministries"
-            className="block py-2 text-church-primary hover:text-church-accent"
+            className="block py-2 text-primary hover:text-primary/80"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Ministries
           </NavLink>
           <NavLink
             to="/about"
-            className="block py-2 text-church-primary hover:text-church-accent"
+            className="block py-2 text-primary hover:text-primary/80"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             About
           </NavLink>
           <NavLink
             to="/donate"
-            className="block py-2 mt-2 bg-church-accent text-white px-4 rounded-md hover:bg-opacity-90 transition"
+            className="block py-2 mt-2 bg-primary text-primary-foreground px-4 rounded-md hover:bg-primary/90 transition"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Donate
